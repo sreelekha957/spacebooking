@@ -1,22 +1,14 @@
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Booking from "./components/Booking";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-         Hello Welcome to my page
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/booking" element={<Booking />} />
+    </Routes>
   );
 }
 
