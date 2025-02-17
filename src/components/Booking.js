@@ -1,17 +1,32 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./booking.css";
 
 const Booking = () => {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const space = queryParams.get("space");
+  const params = new URLSearchParams(location.search);
+  const space = params.get("space") || "Unknown Space";
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
-    <div>
-      <h1>Booking Page</h1>
-      <h2>{space ? `Booking for: ${space}` : "Select a space to book"}</h2>
-      <button>Request Booking</button>
+    <div className="booking-container">
+      <h1>Book {space}</h1>
+      <p>Select a date for your booking:</p>
+
+      <div className="calendar-container">
+        <DatePicker 
+          selected={selectedDate} 
+          onChange={(date) => setSelectedDate(date)} 
+          inline
+        />
+      </div>
+
+      <div className="button-group">
+        <button className="confirm-btn">Confirm Booking</button>
+        <Link to="/" className="cancel-btn">Cancel</Link>
+      </div>
     </div>
   );
 };
