@@ -1,0 +1,58 @@
+/* Gallery Container */
+.gallery-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Gallery Title */
+  .gallery-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* No Images Message */
+  .no-images {
+    font-size: 18px;
+    color: #888;
+  }
+  
+  /* Image Grid Layout */
+  .gallery-grid {
+    display: flex;
+    flex-wrap: wrap; /* Wrap images to next row if needed */
+    justify-content: center;
+    gap: 150px; /* Space between images */
+  }
+  
+
+
+  /* Individual Image Container */
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers image and text */
+    justify-content: center;
+    width: 250px; /* Adjust as needed */
+    text-align: center; /* Centers text */
+  }
+  
+  /* Image Styling */
+  .gallery-image {
+    width: 150%; /* Make all images the same width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures images look uniform */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image Title */
+  .image-title {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; /* Ensure text is centered */
+    margin-top: 8px; /* Space between image and title */
+    width: 100%; /* Ensures text doesn't break layout */
+  }
+  

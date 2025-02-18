@@ -21,9 +21,11 @@ const Home = () => {
                 ? "Perfect for meetings and presentations."
                 : room === "Classroom"
                 ? "Best for training sessions and classes."
-                : "A creative space for brainstorming sessions."}
+                : "A creative space for brainstorming sessions, ideal for 1-2."}
             </p>
-            <p><strong>Capacity:</strong> {room === "Conference Room" ? "up to 12 people" : room === "Classroom" ? "20-45 people" : "Flexible"}</p>
+            {room !== "Idea Room" && (
+              <p><strong>Capacity:</strong> {room === "Conference Room" ? "up to 12 people" : "20-45 people"}</p>
+            )}
             <p>
               <strong>Features:</strong> {room === "Conference Room"
                 ? "TV with HDMI/USB/ethernet input"
@@ -32,6 +34,10 @@ const Home = () => {
                 : "Perfect for brainstorming, meditation, and creative work"}
             </p>
             <Link to={`/booking?space=${encodeURIComponent(room)}`} className="book-btn">Book Now</Link>
+            <br/>
+            <br/>
+            <br/>
+            <Link to={`/gallery?space=${encodeURIComponent(room)}`} className="see-pictures-link">See Pictures</Link>
           </div>
         ))}
       </div>
